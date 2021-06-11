@@ -16,7 +16,7 @@ export default function App() {
             <Link to="/keyboard-navigation">Keyboard Navigation</Link>
           </li>
           <li>
-            <Link to="/keyboard-navigation">Keyboard Navigation</Link>
+            <Link to="/practice-react-context">Practice React Context</Link>
           </li>
         </ul>
       </nav>
@@ -25,7 +25,7 @@ export default function App() {
             renders the first one that matches the current URL. */}
       <Switch>
         <Route strict path="/keyboard-navigation" component={KeyboardNavigation} />
-        <Route strict path="/keyboard-navigation" component={PracticeReactContext} />
+        <Route strict path="/practice-react-context" component={PracticeReactContext} />
         <Route strict path="/" component={Home} />
         <Route component={() => <Redirect to={{ pathname: '/' }} />} />
       </Switch>
