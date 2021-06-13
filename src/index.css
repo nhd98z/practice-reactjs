@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html,
+input,
+textarea,
+button {
+  font-family: 'Roboto', sans-serif;
+}
+
 html,
 body {
   margin: 0;
@@ -18,5 +27,5 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  font-feature-settings: "ss01" on, "ss02" on, "cv01" on, "cv03" on;
+  font-feature-settings: 'ss01' on, 'ss02' on, 'cv01' on, 'cv03' on;
 }
