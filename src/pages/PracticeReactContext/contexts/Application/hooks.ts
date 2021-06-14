@@ -1,4 +1,16 @@
-import { useApplicationContext } from '.'
+import { useContext } from 'react'
+
+import { ApplicationContext } from '.'
+
+function useApplicationContext() {
+  const context = useContext(ApplicationContext)
+
+  if (context === null) {
+    throw new Error('useApplicationContext must be within ApplicationContext.Provider')
+  }
+
+  return context
+}
 
 export function useCountManager(): [
   number,

@@ -25,7 +25,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -46,6 +47,14 @@
     ]
   },
   "devDependencies": {
-    "@types/react-router-dom": "^5.1.7"
+    "@types/react-router-dom": "^5.1.7",
+    "husky": ">=6",
+    "lint-staged": ">=10",
+    "prettier": "^2.3.1"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,html,css,scss,md}": [
+      "prettier --write"
+    ]
   }
 }
