@@ -10,7 +10,7 @@ export default function App() {
       <nav>
         <ul>
           <li>
-            <Link to="/">Homez</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/keyboard-navigation">Keyboard Navigation</Link>
