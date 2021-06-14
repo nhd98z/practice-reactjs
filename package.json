@@ -20,6 +20,13 @@
     "typescript": "^4.1.2",
     "web-vitals": "^2.0.1"
   },
+  "devDependencies": {
+    "@types/react-router-dom": "^5.1.7",
+    "cz-conventional-changelog": "3.3.0",
+    "husky": ">=6",
+    "lint-staged": ">=10",
+    "prettier": "^2.3.1"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -45,15 +52,14 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "@types/react-router-dom": "^5.1.7",
-    "husky": ">=6",
-    "lint-staged": ">=10",
-    "prettier": "^2.3.1"
-  },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,html,css,scss,md}": [
       "prettier --write"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
