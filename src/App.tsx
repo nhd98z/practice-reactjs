@@ -1,8 +1,8 @@
-import React from 'react'
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom'
 import Home from './pages/Home'
 import KeyboardNavigation from './pages/KeyboardNavigation'
 import PracticeReactContext from './pages/PracticeReactContext'
+import TestUseRender from './pages/TestUseRender'
 
 export default function App() {
   return (
@@ -18,6 +18,9 @@ export default function App() {
           <li>
             <Link to="/practice-react-context">Practice React Context</Link>
           </li>
+          <li>
+            <Link to="/test-use-render">Test useRender</Link>
+          </li>
         </ul>
       </nav>
 
@@ -26,6 +29,8 @@ export default function App() {
       <Switch>
         <Route strict path="/keyboard-navigation" component={KeyboardNavigation} />
         <Route strict path="/practice-react-context" component={PracticeReactContext} />
+        <Route strict path="/test-use-render" component={TestUseRender} />
+        {/* Home and Redirect */}
         <Route strict path="/" component={Home} />
         <Route component={() => <Redirect to={{ pathname: '/' }} />} />
       </Switch>
