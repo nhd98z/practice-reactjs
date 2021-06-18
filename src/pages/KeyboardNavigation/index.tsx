@@ -13,12 +13,11 @@ export default function KeyboardNavigation() {
       <button>This is a button</button>
       <StyledDiv>This is a div</StyledDiv>
       <StyledDiv
-        tabIndex={0}
         onClick={() => {
           console.log('clicked')
         }}
       >
-        This is a div (has onClick event) and tabindex="0"
+        This is a div (has onClick event)
       </StyledDiv>
       <button>This is a button</button>
       <button>This is a button</button>
