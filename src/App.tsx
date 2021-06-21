@@ -3,6 +3,7 @@ import Home from './pages/Home'
 import KeyboardNavigation from './pages/KeyboardNavigation'
 import PracticeReactContext from './pages/PracticeReactContext'
 import TestUseRender from './pages/TestUseRender'
+import TestUsePrevious from './pages/TestUsePrevious'
 
 export default function App() {
   return (
@@ -21,6 +22,9 @@ export default function App() {
           <li>
             <Link to="/test-use-render">Test useRender</Link>
           </li>
+          <li>
+            <Link to="/test-use-previous">Test usePrevious</Link>
+          </li>
         </ul>
       </nav>
 
@@ -30,6 +34,7 @@ export default function App() {
         <Route strict path="/keyboard-navigation" component={KeyboardNavigation} />
         <Route strict path="/practice-react-context" component={PracticeReactContext} />
         <Route strict path="/test-use-render" component={TestUseRender} />
+        <Route strict path="/test-use-previous" component={TestUsePrevious} />
         {/* Home and Redirect */}
         <Route strict path="/" component={Home} />
         <Route component={() => <Redirect to={{ pathname: '/' }} />} />
