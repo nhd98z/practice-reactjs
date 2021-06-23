@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fddf101d-ebbf-4d92-a9af-c56ea7c54f0f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/TestUsePrevious/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TestUsePrevious/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +22,7 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1uDldTiLe8IRtplVbo4xkHjVILU" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -61,6 +59,7 @@
       <workItem from="1624269056962" duration="601000" />
       <workItem from="1624284187099" duration="605000" />
       <workItem from="1624368921871" duration="1219000" />
+      <workItem from="1624420136168" duration="27000" />
     </task>
     <servers />
   </component>
