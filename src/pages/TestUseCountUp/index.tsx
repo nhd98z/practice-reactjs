@@ -1,14 +1,14 @@
-import { CountUp } from 'use-count-up'
-import { useEffect, useState } from 'react'
-import { usePrevious } from '../TestUsePrevious'
+import React, { CountUp } from 'use-count-up';
+import { useEffect, useState } from 'react';
+import { usePrevious } from '../TestUsePrevious';
 
 export default function TestUseCountUp() {
-  const [count, setCount] = useState(1000)
-  const prevCount = usePrevious(count)
+  const [count, setCount] = useState(1000);
+  const prevCount = usePrevious(count);
 
   useEffect(() => {
-    setCount((prev) => prev + 1234)
-  }, [])
+    setCount((prev) => prev + 1234);
+  }, []);
 
   return (
     <>
@@ -17,11 +17,11 @@ export default function TestUseCountUp() {
       </h1>
       <button
         onClick={() => {
-          setCount((prev) => prev + 1234)
+          setCount((prev) => prev + 1234);
         }}
       >
         inc
       </button>
     </>
-  )
+  );
 }

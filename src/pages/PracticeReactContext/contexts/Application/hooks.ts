@@ -1,21 +1,21 @@
-import { useContext } from 'react'
+import { useContext } from 'react';
 
-import { ApplicationContext } from '.'
+import { ApplicationContext } from '.';
 
 function useApplicationContext() {
-  const context = useContext(ApplicationContext)
+  const context = useContext(ApplicationContext);
 
   if (context === null) {
-    throw new Error('useApplicationContext must be within ApplicationContext.Provider')
+    throw new Error('useApplicationContext must be within ApplicationContext.Provider');
   }
 
-  return context
+  return context;
 }
 
 export function useCountManager(): [
   number,
   { increaseCount: (amount: number) => void; decreaseCount: (amount: number) => void }
 ] {
-  const [state, { increaseCount, decreaseCount }] = useApplicationContext()
-  return [state.count, { increaseCount, decreaseCount }]
+  const [state, { increaseCount, decreaseCount }] = useApplicationContext();
+  return [state.count, { increaseCount, decreaseCount }];
 }
