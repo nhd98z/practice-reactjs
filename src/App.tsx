@@ -6,6 +6,7 @@ import PracticeReactContext from './pages/PracticeReactContext';
 import TestUseRender from './pages/TestUseRender';
 import TestUsePrevious from './pages/TestUsePrevious';
 import TestUseCountUp from './pages/TestUseCountUp';
+import TestSocketIO from './pages/TestSocketIO';
 
 export default function App() {
   return (
@@ -30,6 +31,9 @@ export default function App() {
           <li>
             <Link to="/test-use-count-up">Test use-count-up</Link>
           </li>
+          <li>
+            <Link to="/test-socket-io">Test socket.io</Link>
+          </li>
         </ul>
       </nav>
 
@@ -41,7 +45,7 @@ export default function App() {
         <Route strict path="/test-use-render" component={TestUseRender} />
         <Route strict path="/test-use-previous" component={TestUsePrevious} />
         <Route strict path="/test-use-count-up" component={TestUseCountUp} />
-
+        <Route strict path="/test-socket-io" component={TestSocketIO} />
         {/* Home and Redirect */}
         <Route strict path="/" component={Home} />
         <Route component={() => <Redirect to={{ pathname: '/' }} />} />
