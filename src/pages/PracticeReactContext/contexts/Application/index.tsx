@@ -18,27 +18,21 @@ const INITIAL_STATE: ApplicationContextState = { count: 0 };
 export default function Provider({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
 
-  const increaseCount = useCallback(
-    (amount: number) => {
-      dispatch({
-        type: INCREASE_COUNT,
-        payload: { amount },
-      });
-    },
-    [dispatch]
-  );
+  const increaseCount = useCallback((amount: number) => {
+    dispatch({
+      type: INCREASE_COUNT,
+      payload: { amount },
+    });
+  }, []);
 
-  const decreaseCount = useCallback(
-    (amount: number) => {
-      dispatch({
-        type: DECREASE_COUNT,
-        payload: {
-          amount,
-        },
-      });
-    },
-    [dispatch]
-  );
+  const decreaseCount = useCallback((amount: number) => {
+    dispatch({
+      type: DECREASE_COUNT,
+      payload: {
+        amount,
+      },
+    });
+  }, []);
 
   return (
     <ApplicationContext.Provider
