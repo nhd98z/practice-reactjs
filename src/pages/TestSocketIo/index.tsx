@@ -1,11 +1,17 @@
-// Run project express-socketio-tutorial.
-import React, { useEffect } from 'react';
-import { socket } from '../RenderLargeRealtimeList';
+import React, { useEffect, useState } from 'react';
+import { socket } from '../../index';
 
 export default function TestSocketIo() {
+  const [data, setData] = useState<any>();
   useEffect(() => {
+    socket.connect();
+
     socket.on('connect', () => {
       console.log('Connected');
+    });
+
+    socket.on('dataInterval', (newData) => {
+      setData(newData);
     });
 
     socket.on('disconnect', () => {
@@ -19,5 +25,14 @@ export default function TestSocketIo() {
     };
   }, []);
 
-  return <div>OK.</div>;
+  return (
+    <div>
+      {data?.length &&
+        data.map((item: any) => (
+          <div key={item.id}>
+            {item.name}: {item.value1}
+          </div>
+        ))}
+    </div>
+  );
 }

@@ -8,6 +8,7 @@ import TestUsePrevious from './pages/TestUsePrevious';
 import TestUseCountUp from './pages/TestUseCountUp';
 import TestSocketIo from './pages/TestSocketIo';
 import RenderLargeRealtimeList from './pages/RenderLargeRealtimeList';
+import TestIntegrateWithFirebase from './pages/TestIntegrateWithFirebase';
 
 export default function App() {
   return (
@@ -38,6 +39,9 @@ export default function App() {
           <li>
             <Link to="/render-large-realtime-list">Render large real-time list</Link>
           </li>
+          <li>
+            <Link to="/test-integrate-with-firebase">Test Integrate With Firebase</Link>
+          </li>
         </ul>
       </nav>
 
@@ -51,6 +55,7 @@ export default function App() {
         <Route strict path="/test-use-count-up" component={TestUseCountUp} />
         <Route strict path="/test-socket-io" component={TestSocketIo} />
         <Route strict path="/render-large-realtime-list" component={RenderLargeRealtimeList} />
+        <Route strict path="/test-integrate-with-firebase" component={TestIntegrateWithFirebase} />
         {/* Home and Redirect */}
         <Route strict path="/" component={Home} />
         <Route component={() => <Redirect to={{ pathname: '/' }} />} />

@@ -1,9 +1,6 @@
-// Run project express-socketio-tutorial.
 import React, { CSSProperties, useCallback, useEffect, useRef, useState } from 'react';
-import io from 'socket.io-client';
 import { FixedSizeList } from 'react-window';
-
-export const socket = io('http://localhost:8080/');
+import { socket } from '../../index';
 
 function useSocketIo(eventName: string, callback: (data: any) => void): null {
   useEffect(() => {

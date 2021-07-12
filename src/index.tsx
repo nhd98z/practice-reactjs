@@ -3,6 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import io from 'socket.io-client';
+
+// Run project express-socketio-tutorial.
+export const socket = io('http://localhost:8080/', {
+  autoConnect: false,
+});
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
