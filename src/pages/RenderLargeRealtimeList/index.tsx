@@ -42,10 +42,42 @@ export default function RenderLargeRealtimeList() {
       style={{
         height: '50px',
         borderBottom: '1px solid black',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-around',
         ...style,
       }}
     >
-      Row {index}: {data[index].name}
+      <div style={{ width: '150px' }}>Row {index}</div>
+      <div style={{ width: '250px' }}>{data[index].name}</div>
+      <div
+        style={{
+          width: '150px',
+          justifySelf: 'center',
+          backgroundColor: data[index].value1 % 2 === 0 ? 'lime' : 'red',
+          color: data[index].value1 % 2 === 0 ? 'black' : 'white',
+        }}
+      >
+        {data[index].value1}
+      </div>
+      <div
+        style={{
+          width: '150px',
+          backgroundColor: data[index].value2 % 2 === 0 ? 'lime' : 'red',
+          color: data[index].value2 % 2 === 0 ? 'black' : 'white',
+        }}
+      >
+        {data[index].value2}
+      </div>
+      <div
+        style={{
+          width: '150px',
+          backgroundColor: data[index].value3 % 2 === 0 ? 'lime' : 'red',
+          color: data[index].value3 % 2 === 0 ? 'black' : 'white',
+        }}
+      >
+        {data[index].value3}
+      </div>
     </div>
   );
 
@@ -63,7 +95,7 @@ export default function RenderLargeRealtimeList() {
       height={500}
       itemCount={data.length}
       itemSize={50}
-      width={500}
+      width={1000}
     >
       {Row}
     </FixedSizeList>
