@@ -25,6 +25,8 @@ function useSocketIo(eventName: string, callback: (data: any) => void, isPause: 
   return null;
 }
 
+const ITEM_SIZE = 50;
+
 export default function RenderLargeRealtimeList() {
   const [data, setData] = useState<Array<any>>([]);
   const [range, setRange] = useState<{ begin: number; end: number }>({ begin: 0, end: 10 });
@@ -66,7 +68,7 @@ export default function RenderLargeRealtimeList() {
       <div
         style={{
           height: '50px',
-          borderBottom: '1px solid black',
+          backgroundColor: index % 2 === 0 ? 'orange' : 'cyan',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-around',
@@ -125,8 +127,8 @@ export default function RenderLargeRealtimeList() {
         outerRef={myRef}
         onScroll={() => {
           if (myRef.current) {
-            const begin = Math.floor(myRef.current.scrollTop / 50);
-            const end = begin + 10 + (myRef.current.scrollTop % 50 === 0 ? 0 : 1);
+            const begin = Math.floor(myRef.current.scrollTop / ITEM_SIZE);
+            const end = begin + 10 + (myRef.current.scrollTop % ITEM_SIZE === 0 ? 0 : 1);
             setRange({ begin, end });
           }
         }}
@@ -134,11 +136,29 @@ export default function RenderLargeRealtimeList() {
         height={500}
         itemData={data}
         itemCount={data.length}
-        itemSize={50}
+        itemSize={ITEM_SIZE}
         width={1000}
       >
         {Row}
       </FixedSizeList>
+      <p>Có 2 lỗi ở đây:</p>
+      <p>
+        1. FixedSizeList bị ràng buộc giữa itemSize và itemCount. Ví dụ: Nếu muốn render ra 1,000,000 item thì chiều cao
+        của mỗi item không được quá 33.5px.
+      </p>
+      <p>
+        2. Giá trị thực và giá trị in ra console của scrollTop không giống nhau khi user drag scrollbar. Ví dụ: User
+        drag scrollbar xuống dưới cùng, đúng ra range.end phải là 999,999 nhưng nó lại là 670,000.
+      </p>
+      <blockquote>
+        PS: Tại sao lại xác định được giá trị thực đúng còn giá trị in ra console sai? Vì data realtime từ socket trả về
+        vẫn giữ đúng dòng, tức là số &quot;999,999.42&quot; vẫn nhảy liên tục thành: &quot;999,999.61&quot;,
+        &quot;999,999.89&quot;...
+      </blockquote>
+      <blockquote>
+        More PS: Muốn click một phát xuống dòng 200?
+        https://codesandbox.io/s/bvaughnreact-window-fixed-size-list-vertical-wqmeo
+      </blockquote>
     </div>
   );
 }
