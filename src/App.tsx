@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
 import Home from './pages/Home';
 import KeyboardNavigation from './pages/KeyboardNavigation';
@@ -9,6 +8,7 @@ import TestUseCountUp from './pages/TestUseCountUp';
 import TestSocketIo from './pages/TestSocketIo';
 import RenderLargeRealtimeList from './pages/RenderLargeRealtimeList';
 import TestReactQuery from './pages/TestReactQuery';
+import TestReactTable from './pages/TestReactTable';
 
 export default function App() {
   return (
@@ -42,6 +42,9 @@ export default function App() {
           <li>
             <Link to="/test-react-query">Test react-query</Link>
           </li>
+          <li>
+            <Link to="/test-react-table">Test react-table</Link>
+          </li>
         </ul>
       </nav>
 
@@ -54,6 +57,7 @@ export default function App() {
         <Route strict path="/test-socket-io" component={TestSocketIo} />
         <Route strict path="/render-large-realtime-list" component={RenderLargeRealtimeList} />
         <Route strict path="/test-react-query" component={TestReactQuery} />
+        <Route strict path="/test-react-table" component={TestReactTable} />
         {/* Home and Redirect */}
         <Route strict path="/" component={Home} />
         <Route component={() => <Redirect to={{ pathname: '/' }} />} />
