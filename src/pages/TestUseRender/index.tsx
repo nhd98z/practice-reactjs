@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import useRender from './useRender';
 import styled from '@emotion/styled';
 

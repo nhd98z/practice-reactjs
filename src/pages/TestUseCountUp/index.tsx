@@ -1,4 +1,4 @@
-import React, { CountUp } from 'use-count-up';
+import { CountUp } from 'use-count-up';
 import { useEffect, useState } from 'react';
 import { usePrevious } from '../TestUsePrevious';
 

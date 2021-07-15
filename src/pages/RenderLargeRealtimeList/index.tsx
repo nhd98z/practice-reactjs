@@ -1,4 +1,4 @@
-import React, { CSSProperties, useCallback, useEffect, useRef, useState } from 'react';
+import { CSSProperties, useCallback, useEffect, useRef, useState } from 'react';
 import { FixedSizeList } from 'react-window';
 import { socket } from '../../index';
 

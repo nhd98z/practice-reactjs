@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useMemo, useCallback } from 'react';
+import { createContext, useReducer, useMemo, useCallback } from 'react';
 import { DECREASE_COUNT, INCREASE_COUNT } from './constants';
 import reducer from './reducer';
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 // modified from https://usehooks.com/usePrevious/
 export function usePrevious<T>(value: T) {
@@ -32,7 +32,7 @@ export default function TestUsePrevious() {
 
   const prevValue = usePrevious(value);
 
-  React.useEffect(() => {
+  useEffect(() => {
     console.log('prevValue', prevValue);
   }, [prevValue]);
 
