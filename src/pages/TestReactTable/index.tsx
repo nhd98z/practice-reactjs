@@ -1,5 +1,4 @@
 /* eslint-disable */
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
 /**
@@ -7,11 +6,10 @@
  * cần customize table nặng, còn những table thường thường thì chả cần.
  */
 
-import React from 'react';
 import styled from 'styled-components';
 import { useTable, useGroupBy, useExpanded } from 'react-table';
-
 import makeData from './makeData';
+import { useMemo } from 'react';
 
 const Styles = styled.div`
   padding: 1rem;
@@ -189,7 +187,7 @@ function roundedMedian(leafValues) {
 }
 
 export default function TestReactTable() {
-  const columns = React.useMemo(
+  const columns = useMemo(
     () => [
       {
         Header: 'Name',
@@ -250,7 +248,7 @@ export default function TestReactTable() {
     []
   );
 
-  const data = React.useMemo(() => makeData(10000), []);
+  const data = useMemo(() => makeData(10000), []);
 
   return (
     <Styles>

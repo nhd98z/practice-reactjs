@@ -7,13 +7,9 @@ button {
   font-family: 'Roboto', sans-serif;
 }
 
-html,
-body {
+* {
   margin: 0;
   padding: 0;
-}
-
-* {
   box-sizing: border-box;
 }
 
@@ -32,11 +28,13 @@ html {
 
 ul {
   display: flex;
+  flex-wrap: wrap;
 }
 
-ul > * + * {
-  margin-left: 10px;
-}
-li {
+ul > li {
   display: inline;
+}
+
+ul > li:not(:last-child) {
+  margin-right: 1rem;
 }
