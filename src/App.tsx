@@ -14,6 +14,7 @@ const PAGES = [
   'TestReactTable',
   'TestFieldDependencyWithReactHookForm',
   'TestFieldDependencyWithFormik',
+  'TestMaterialUI',
 ];
 
 export default function App() {
