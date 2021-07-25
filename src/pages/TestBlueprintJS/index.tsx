@@ -3,6 +3,11 @@ import { Button, Card, Elevation, FocusStyleManager } from '@blueprintjs/core'
 import './index.scss'
 import { useMediaQuery } from '@material-ui/core'
 import { useToggle } from 'react-use'
+import styled from 'styled-components'
+
+const StyledButton = styled(Button)`
+  background: red;
+`
 
 export default function TestBlueprintJS() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
@@ -26,6 +31,7 @@ export default function TestBlueprintJS() {
       <Button intent="warning" text="warning" />
       <Button intent="danger" text="danger" />
       <Button intent="none" text="none" />
+      <StyledButton text="Styled components don't work" />
       <br />
       <br />
       <Button intent="none" text="Toggle theme" onClick={toggleTheme} />
