@@ -1,11 +1,11 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react'
 
 export default function useRender(): number {
-  const ref = useRef(1);
+  const ref = useRef(1)
 
   useEffect(() => {
-    ref.current++;
-  });
+    ref.current++
+  })
 
-  return ref.current;
+  return ref.current
 }

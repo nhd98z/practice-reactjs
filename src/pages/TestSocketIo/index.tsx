@@ -1,29 +1,29 @@
-import { useEffect, useState } from 'react';
-import { socket } from '../../index';
+import { useEffect, useState } from 'react'
+import { socket } from '../../index'
 
 export default function TestSocketIo() {
-  const [data, setData] = useState<any>();
+  const [data, setData] = useState<any>()
   useEffect(() => {
-    socket.connect();
+    socket.connect()
 
     socket.on('connect', () => {
-      console.log('Connected');
-    });
+      console.log('Connected')
+    })
 
     socket.on('dataInterval', (newData) => {
-      setData(newData);
-    });
+      setData(newData)
+    })
 
     socket.on('disconnect', () => {
-      console.log('Disconnected');
-    });
+      console.log('Disconnected')
+    })
 
     return () => {
-      socket.disconnect();
-      socket.off('connect');
-      socket.off('disconnect');
-    };
-  }, []);
+      socket.disconnect()
+      socket.off('connect')
+      socket.off('disconnect')
+    }
+  }, [])
 
   return (
     <div>
@@ -34,5 +34,5 @@ export default function TestSocketIo() {
           </div>
         ))}
     </div>
-  );
+  )
 }

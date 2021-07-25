@@ -1,29 +1,29 @@
-import { createContext, useReducer, useMemo, useCallback } from 'react';
-import { DECREASE_COUNT, INCREASE_COUNT } from './constants';
-import reducer from './reducer';
+import { createContext, useReducer, useMemo, useCallback } from 'react'
+import { DECREASE_COUNT, INCREASE_COUNT } from './constants'
+import reducer from './reducer'
 
 export type ApplicationContextState = {
-  count: number;
-};
+  count: number
+}
 
 export type ApplicationContextDispatch = {
-  increaseCount: (amount: number) => void;
-  decreaseCount: (amount: number) => void;
-};
+  increaseCount: (amount: number) => void
+  decreaseCount: (amount: number) => void
+}
 
-export const ApplicationContext = createContext<[ApplicationContextState, ApplicationContextDispatch] | null>(null);
+export const ApplicationContext = createContext<[ApplicationContextState, ApplicationContextDispatch] | null>(null)
 
-const INITIAL_STATE: ApplicationContextState = { count: 0 };
+const INITIAL_STATE: ApplicationContextState = { count: 0 }
 
 export default function Provider({ children }: { children: React.ReactNode }) {
-  const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
+  const [state, dispatch] = useReducer(reducer, INITIAL_STATE)
 
   const increaseCount = useCallback((amount: number) => {
     dispatch({
       type: INCREASE_COUNT,
       payload: { amount },
-    });
-  }, []);
+    })
+  }, [])
 
   const decreaseCount = useCallback((amount: number) => {
     dispatch({
@@ -31,8 +31,8 @@ export default function Provider({ children }: { children: React.ReactNode }) {
       payload: {
         amount,
       },
-    });
-  }, []);
+    })
+  }, [])
 
   return (
     <ApplicationContext.Provider
@@ -49,5 +49,5 @@ export default function Provider({ children }: { children: React.ReactNode }) {
     >
       {children}
     </ApplicationContext.Provider>
-  );
+  )
 }

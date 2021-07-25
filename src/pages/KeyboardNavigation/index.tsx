@@ -1,10 +1,10 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 
 const StyledDiv = styled.div`
   :focus {
     background: red;
   }
-`;
+`
 
 export default function KeyboardNavigation() {
   return (
@@ -13,7 +13,7 @@ export default function KeyboardNavigation() {
       <StyledDiv>This is a div</StyledDiv>
       <StyledDiv
         onClick={() => {
-          console.log('clicked');
+          console.log('clicked')
         }}
       >
         This is a div (has onClick event)
@@ -23,12 +23,12 @@ export default function KeyboardNavigation() {
       <StyledDiv
         tabIndex={0}
         onClick={() => {
-          console.log('clicked');
+          console.log('clicked')
         }}
       >
         This is a div (has onClick event) and tabindex=`&quot;0`&quot;
       </StyledDiv>
       <button>This is a button</button>
     </>
-  );
+  )
 }

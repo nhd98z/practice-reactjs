@@ -1,67 +1,67 @@
-import { CSSProperties, useCallback, useEffect, useRef, useState } from 'react';
-import { FixedSizeList } from 'react-window';
-import { socket } from '../../index';
+import { CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
+import { FixedSizeList } from 'react-window'
+import { socket } from '../../index'
 
 function useSocketIo(eventName: string, callback: (data: any) => void, isPause: boolean): null {
   useEffect(() => {
-    socket.connect();
+    socket.connect()
 
     return () => {
-      socket.disconnect();
-    };
-  }, []);
+      socket.disconnect()
+    }
+  }, [])
 
   useEffect(() => {
     if (isPause) {
-      socket.off(eventName, callback);
+      socket.off(eventName, callback)
     } else {
-      socket.on(eventName, callback);
+      socket.on(eventName, callback)
     }
     return () => {
-      socket.off(eventName, callback);
-    };
-  }, [eventName, callback, isPause]);
+      socket.off(eventName, callback)
+    }
+  }, [eventName, callback, isPause])
 
-  return null;
+  return null
 }
 
-const ITEM_SIZE = 50;
+const ITEM_SIZE = 50
 
 export default function RenderLargeRealtimeList() {
-  const [data, setData] = useState<Array<any>>([]);
-  const [range, setRange] = useState<{ begin: number; end: number }>({ begin: 0, end: 10 });
-  const [isPause, setPause] = useState(false);
+  const [data, setData] = useState<Array<any>>([])
+  const [range, setRange] = useState<{ begin: number; end: number }>({ begin: 0, end: 10 })
+  const [isPause, setPause] = useState(false)
 
   useEffect(() => {
-    console.log('range', range);
-    socket.emit('serverGetNewRange', range);
-  }, [range]);
+    console.log('range', range)
+    socket.emit('serverGetNewRange', range)
+  }, [range])
 
   const dataFirstTimeCallback = useCallback((newData) => {
-    setData(newData);
-  }, []);
+    setData(newData)
+  }, [])
 
   const dataIntervalCallback = useCallback(
     (newData) => {
       setData((prevData) => {
-        const prevDataCopied = [...prevData];
+        const prevDataCopied = [...prevData]
         for (let i = range.begin; i < range.end; i++) {
-          prevDataCopied[i] = newData[i - range.begin];
+          prevDataCopied[i] = newData[i - range.begin]
         }
-        return prevDataCopied;
-      });
+        return prevDataCopied
+      })
     },
     [range]
-  );
+  )
 
-  useSocketIo('dataFirstTime', dataFirstTimeCallback, false);
-  useSocketIo('dataInterval', dataIntervalCallback, isPause);
+  useSocketIo('dataFirstTime', dataFirstTimeCallback, false)
+  useSocketIo('dataInterval', dataIntervalCallback, isPause)
 
-  const myRef = useRef<HTMLDivElement>(null);
+  const myRef = useRef<HTMLDivElement>(null)
 
   const Row = ({ index, style }: { index: number; style: CSSProperties }) => {
     if (data[index] === undefined || data[index] === null) {
-      return null;
+      return null
     }
 
     return (
@@ -106,8 +106,8 @@ export default function RenderLargeRealtimeList() {
           {data[index].value3}
         </div>
       </div>
-    );
-  };
+    )
+  }
 
   return (
     <div>
@@ -127,9 +127,9 @@ export default function RenderLargeRealtimeList() {
         outerRef={myRef}
         onScroll={() => {
           if (myRef.current) {
-            const begin = Math.floor(myRef.current.scrollTop / ITEM_SIZE);
-            const end = begin + 10 + (myRef.current.scrollTop % ITEM_SIZE === 0 ? 0 : 1);
-            setRange({ begin, end });
+            const begin = Math.floor(myRef.current.scrollTop / ITEM_SIZE)
+            const end = begin + 10 + (myRef.current.scrollTop % ITEM_SIZE === 0 ? 0 : 1)
+            setRange({ begin, end })
           }
         }}
         style={{ backgroundColor: 'orange' }}
@@ -160,5 +160,5 @@ export default function RenderLargeRealtimeList() {
         https://codesandbox.io/s/bvaughnreact-window-fixed-size-list-vertical-wqmeo
       </blockquote>
     </div>
-  );
+  )
 }

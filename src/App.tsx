@@ -1,6 +1,6 @@
-import { lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
-import Home from './pages/Home';
+import { lazy, Suspense } from 'react'
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom'
+import Home from './pages/Home'
 
 const PAGES = [
   'KeyboardNavigation',
@@ -15,7 +15,8 @@ const PAGES = [
   'TestFieldDependencyWithReactHookForm',
   'TestFieldDependencyWithFormik',
   'TestMaterialUI',
-];
+  'TestBlueprintJS',
+]
 
 export default function App() {
   return (
@@ -44,5 +45,5 @@ export default function App() {
         </Switch>
       </Suspense>
     </Router>
-  );
+  )
 }
