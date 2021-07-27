@@ -1,5 +1,5 @@
-import { lazy, Suspense } from 'react'
-import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom'
+import React, { lazy, Suspense } from 'react'
+import { BrowserRouter as Router, Link, Redirect, Route, Switch } from 'react-router-dom'
 import Home from './pages/Home'
 
 const PAGES = [
@@ -16,6 +16,8 @@ const PAGES = [
   'TestFieldDependencyWithFormik',
   'TestMaterialUI',
   'TestBlueprintJS',
+  'TestModalAsAPage',
+  'TestModalAsAPage_PageThatCanOpenAsAModal',
 ]
 
 export default function App() {
@@ -40,7 +42,7 @@ export default function App() {
             <Route key={index} strict exact path={`/${page}`} component={lazy(() => import(`./pages/${page}`))} />
           ))}
           {/* Home and Redirect */}
-          <Route strict path="/" component={Home} />
+          <Route strict exact path="/" component={Home} />
           <Route component={() => <Redirect to={{ pathname: '/' }} />} />
         </Switch>
       </Suspense>
