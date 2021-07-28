@@ -18,6 +18,7 @@ const PAGES = [
   'TestBlueprintJS',
   'TestModalAsAPage',
   'TestModalAsAPage_PageThatCanOpenAsAModal',
+  'TestGuideModal',
 ]
 
 export default function App() {
