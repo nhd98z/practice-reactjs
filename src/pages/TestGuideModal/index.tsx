@@ -15,32 +15,37 @@ export default function TestGuideModal() {
     setHighlightElement('rect1')
   }
 
-  const handleRect1 = useCallback((node) => {
+  const handleRect1 = useCallback((node: HTMLButtonElement | null) => {
     if (!node) return
-    const { x, y, width, height } = node.getBoundingClientRect()
+    const { width, height } = node.getBoundingClientRect()
+    const { offsetTop: x, offsetLeft: y } = node
     setRect1({ x, y, width, height })
   }, [])
 
-  const handleRect2 = useCallback((node) => {
+  const handleRect2 = useCallback((node: HTMLButtonElement | null) => {
     if (!node) return
-    const { x, y, width, height } = node.getBoundingClientRect()
+    const { width, height } = node.getBoundingClientRect()
+    const { offsetTop: x, offsetLeft: y } = node
     setRect2({ x, y, width, height })
   }, [])
 
-  const handleRect3 = useCallback((node) => {
+  const handleRect3 = useCallback((node: HTMLButtonElement | null) => {
     if (!node) return
-    const { x, y, width, height } = node.getBoundingClientRect()
+    const { width, height } = node.getBoundingClientRect()
+    const { offsetTop: x, offsetLeft: y } = node
     setRect3({ x, y, width, height })
   }, [])
 
   const Modal = () => {
     console.log(`rect1`, rect1)
+    console.log(`rect2`, rect2)
+    console.log(`rect3`, rect3)
 
     return (
       <div
         className={css`
           position: absolute;
-          min-width: 100%;
+          width: 100%;
           min-height: 100%;
           background-color: rgba(0, 0, 0, 0.5);
           z-index: 2147483647;
@@ -50,8 +55,8 @@ export default function TestGuideModal() {
           <div
             className={css`
               position: absolute !important;
-              top: ${rect1.y - 56}px;
-              left: ${rect1.x}px;
+              top: ${rect1.x}px;
+              left: ${rect1.y}px;
             `}
           >
             <Button
@@ -68,8 +73,8 @@ export default function TestGuideModal() {
           <div
             className={css`
               position: absolute !important;
-              top: ${rect2.y - 56}px;
-              left: ${rect2.x}px;
+              top: ${rect2.x}px;
+              left: ${rect2.y}px;
             `}
           >
             <Button
@@ -86,8 +91,8 @@ export default function TestGuideModal() {
           <div
             className={css`
               position: absolute !important;
-              top: ${rect3.y - 56}px;
-              left: ${rect3.x}px;
+              top: ${rect3.x}px;
+              left: ${rect3.y}px;
             `}
           >
             <Button
@@ -134,7 +139,7 @@ export default function TestGuideModal() {
         ref={handleRect1}
         className={css`
           position: absolute !important;
-          top: 30vh;
+          top: 10vh;
           left: 10vw;
         `}
         onClick={() => setText1('Clicked')}
