@@ -19,6 +19,7 @@ const PAGES = [
   'TestModalAsAPage',
   'TestModalAsAPage_PageThatCanOpenAsAModal',
   'TestGuideModal',
+  'ImplementDebounceByMyself',
 ]
 
 export default function App() {
