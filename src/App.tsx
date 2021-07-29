@@ -13,7 +13,6 @@ const PAGES = [
   'TestReactQuery',
   'TestReactTable',
   'TestFieldDependencyWithReactHookForm',
-  'TestFieldDependencyWithFormik',
   'TestMaterialUI',
   'TestBlueprintJS',
   'TestModalAsAPage',
@@ -21,6 +20,7 @@ const PAGES = [
   'TestGuideModal',
   'ImplementDebounceAndThrottle',
   'TestIntroJs',
+  'TestReactHighlightWords',
 ]
 
 export default function App() {

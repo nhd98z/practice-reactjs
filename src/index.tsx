@@ -1,5 +1,6 @@
 import ReactDOM from 'react-dom'
-import './index.css'
+import 'inter-ui/inter.css'
+import './index.scss'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 import io from 'socket.io-client'

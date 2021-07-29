@@ -1,0 +1,42 @@
+/* Fonts */
+html {
+  font-family: 'Inter', 'system-ui', sans-serif;
+  font-variant: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-feature-settings: 'ss01' on, 'ss02' on, 'cv01' on, 'cv03' on;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: 'Inter var', 'system-ui', sans-serif;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+}
+
+button {
+  user-select: none;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ul > li {
+  display: inline;
+}
+
+ul > li:not(:last-child) {
+  margin-right: 1rem;
+}
