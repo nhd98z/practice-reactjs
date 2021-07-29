@@ -20,6 +20,7 @@ const PAGES = [
   'TestModalAsAPage_PageThatCanOpenAsAModal',
   'TestGuideModal',
   'ImplementDebounceAndThrottle',
+  'TestIntroJs',
 ]
 
 export default function App() {

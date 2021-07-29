@@ -35,6 +35,7 @@ export default function TestGuideModal() {
         position: relative;
       `}
     >
+      <h1>đây là code thuần</h1>
       {highlightElement && <Modal />}
       <Button variant="contained" color="primary" onClick={openGuide}>
         Open Guide Modal
