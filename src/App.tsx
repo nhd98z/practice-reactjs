@@ -19,7 +19,7 @@ const PAGES = [
   'TestModalAsAPage',
   'TestModalAsAPage_PageThatCanOpenAsAModal',
   'TestGuideModal',
-  'ImplementDebounceByMyself',
+  'ImplementDebounceAndThrottle',
 ]
 
 export default function App() {
