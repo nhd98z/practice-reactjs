@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react'
 import { BrowserRouter as Router, Link, Redirect, Route, Switch } from 'react-router-dom'
 import Home from './pages/Home'
+import TestReactHighlightWords from './pages/TestReactHighlightWords'
 
 const PAGES = [
   'KeyboardNavigation',
@@ -20,7 +21,7 @@ const PAGES = [
   'TestGuideModal',
   'ImplementDebounceAndThrottle',
   'TestIntroJs',
-  'TestReactHighlightWords',
+  // 'TestReactHighlightWords',
 ]
 
 export default function App() {
@@ -36,6 +37,9 @@ export default function App() {
               <Link to={`/${page}`}>{page}</Link>
             </li>
           ))}
+          <li>
+            <Link to="/TestReactHighlightWords">TestReactHighlightWords</Link>
+          </li>
         </ul>
       </nav>
 
@@ -44,6 +48,7 @@ export default function App() {
           {PAGES.map((page, index) => (
             <Route key={index} strict exact path={`/${page}`} component={lazy(() => import(`./pages/${page}`))} />
           ))}
+          <Route strict exact path="/" component={TestReactHighlightWords} />
           {/* Home and Redirect */}
           <Route strict exact path="/" component={Home} />
           <Route component={() => <Redirect to={{ pathname: '/' }} />} />
