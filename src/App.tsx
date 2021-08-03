@@ -21,6 +21,7 @@ const PAGES = [
   'ImplementDebounceAndThrottle',
   'TestIntroJs',
   'TestReactHighlightWords',
+  'TestReadJsonFile',
 ]
 
 export default function App() {
