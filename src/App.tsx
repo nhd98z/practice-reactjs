@@ -22,6 +22,7 @@ const PAGES = [
   'TestIntroJs',
   'TestReactHighlightWords',
   'TestReadJsonFile',
+  'TestBlockVsNonBlockUI',
 ]
 
 export default function App() {
