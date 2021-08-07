@@ -27,6 +27,8 @@ const PAGES = [
   'TestReactClassComponentLifeCycle',
   'TestReachUi',
   'TestRemoveScroll',
+  'TestFunctionalComponentRerender',
+  'TestClassComponentRerender',
 ]
 
 export default function App() {
