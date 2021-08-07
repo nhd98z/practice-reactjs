@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react'
 import { BrowserRouter as Router, Link, Redirect, Route, Switch } from 'react-router-dom'
 import Home from './pages/Home'
+import { css } from '@emotion/css'
 
 const PAGES = [
   'KeyboardNavigation',
@@ -13,8 +14,8 @@ const PAGES = [
   'TestReactQuery',
   'TestReactTable',
   'TestFieldDependencyWithReactHookForm',
-  'TestMaterialUI',
-  'TestBlueprintJS',
+  'TestMaterialUi',
+  'TestBlueprintJs',
   'TestModalAsAPage',
   'TestModalAsAPage_PageThatCanOpenAsAModal',
   'TestGuideModal',
@@ -22,23 +23,34 @@ const PAGES = [
   'TestIntroJs',
   'TestReactHighlightWords',
   'TestReadJsonFile',
-  'TestBlockVsNonBlockUI',
+  'TestBlockVsNonBlockUi',
+  'TestReactClassComponentLifeCycle',
+  'TestReachUi',
+  'TestRemoveScroll',
 ]
 
 export default function App() {
   return (
     <Router>
       <nav>
-        <ul>
-          <li>
+        <div
+          className={css`
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            border: 5px solid lightcoral;
+            padding: 1rem;
+          `}
+        >
+          <div>
             <Link to="/">Home</Link>
-          </li>
+          </div>
           {PAGES.map((page, index) => (
-            <li key={index}>
+            <div key={index}>
               <Link to={`/${page}`}>{page}</Link>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </nav>
 
       <Suspense fallback={null}>
