@@ -2,7 +2,8 @@ import React, { memo } from 'react'
 import { css } from '@emotion/css'
 
 export default memo(function TestObjectFitImageUrl() {
-  const src = 'https://picsum.photos/480/360'
+  const src =
+    'https://firebasestorage.googleapis.com/v0/b/bitglobal-a84d5.appspot.com/o/land%2Fimages%2F9%2F9_1.jpg?alt=media&token=c409719a-da7c-474e-ae48-8203b7abe970'
   return (
     <div
       className={css`
