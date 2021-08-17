@@ -29,6 +29,7 @@ const PAGES = [
   'TestRemoveScroll',
   'TestFunctionalComponentRerender',
   'TestClassComponentRerender',
+  'TestObjectFitImageUrl',
 ]
 
 export default function App() {
