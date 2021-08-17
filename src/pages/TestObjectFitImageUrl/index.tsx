@@ -46,7 +46,7 @@ export default memo(function TestObjectFitImageUrl() {
           border: 5px solid black;
           position: absolute;
           right: 10%;
-          top: 300px;
+          top: 500px;
         `}
       />
     </div>
