@@ -16,8 +16,8 @@ export default memo(function TestObjectFitImageUrl() {
         className={css`
           border: 5px solid black;
           position: absolute;
-          width: 500px;
-          height: 200px;
+          width: 480px;
+          height: 360px;
           left: 10%;
           top: 10%;
           background-position: center;
@@ -32,8 +32,8 @@ export default memo(function TestObjectFitImageUrl() {
         className={css`
           border: 5px solid black;
           position: absolute;
-          width: 500px;
-          height: 200px;
+          width: 480px;
+          height: 360px;
           right: 10%;
           top: 10%;
           object-fit: cover;
