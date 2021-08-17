@@ -34,7 +34,7 @@ export default memo(function TestObjectFitImageUrl() {
           height: 200px;
           right: 10%;
           top: 10%;
-          object-fit: contain;
+          object-fit: cover;
         `}
       />
       <img
