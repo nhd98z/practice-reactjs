@@ -30,6 +30,7 @@ const PAGES = [
   'TestFunctionalComponentRerender',
   'TestClassComponentRerender',
   'TestObjectFitImageUrl',
+  'TestLayoutAndProtectedPage',
 ]
 
 export default function App() {
