@@ -3,34 +3,34 @@ import { BrowserRouter as Router, Link, Redirect, Route, Switch } from 'react-ro
 import Home from './pages/Home'
 import { css } from '@emotion/css'
 
-const PAGES = [
-  'KeyboardNavigation',
-  'PracticeReactContext',
-  'TestUseRender',
-  'TestUsePrevious',
-  'TestUseCountUp',
-  'TestSocketIo',
-  'RenderLargeRealtimeList',
-  'TestReactQuery',
-  'TestReactTable',
-  'TestFieldDependencyWithReactHookForm',
-  'TestMaterialUi',
-  'TestBlueprintJs',
-  'TestModalAsAPage',
-  'TestModalAsAPage_PageThatCanOpenAsAModal',
-  'TestGuideModal',
-  'ImplementDebounceAndThrottle',
-  'TestIntroJs',
-  'TestReactHighlightWords',
-  'TestReadJsonFile',
-  'TestBlockVsNonBlockUi',
-  'TestReactClassComponentLifeCycle',
-  'TestReachUi',
-  'TestRemoveScroll',
-  'TestFunctionalComponentRerender',
-  'TestClassComponentRerender',
-  'TestObjectFitImageUrl',
-  'TestLayoutAndProtectedPage',
+const PAGES: { page: string; exact?: boolean; strict?: boolean }[] = [
+  { page: 'KeyboardNavigation' },
+  { page: 'PracticeReactContext' },
+  { page: 'TestUseRender' },
+  { page: 'TestUsePrevious' },
+  { page: 'TestUseCountUp' },
+  { page: 'TestSocketIo' },
+  { page: 'RenderLargeRealtimeList' },
+  { page: 'TestReactQuery' },
+  { page: 'TestReactTable' },
+  { page: 'TestFieldDependencyWithReactHookForm' },
+  { page: 'TestMaterialUi' },
+  { page: 'TestBlueprintJs' },
+  { page: 'TestModalAsAPage' },
+  { page: 'TestModalAsAPage_PageThatCanOpenAsAModal' },
+  { page: 'TestGuideModal' },
+  { page: 'ImplementDebounceAndThrottle' },
+  { page: 'TestIntroJs' },
+  { page: 'TestReactHighlightWords' },
+  { page: 'TestReadJsonFile' },
+  { page: 'TestBlockVsNonBlockUi' },
+  { page: 'TestReactClassComponentLifeCycle' },
+  { page: 'TestReachUi' },
+  { page: 'TestRemoveScroll' },
+  { page: 'TestFunctionalComponentRerender' },
+  { page: 'TestClassComponentRerender' },
+  { page: 'TestObjectFitImageUrl' },
+  { page: 'TestLayoutAndProtectedPage', exact: false },
 ]
 
 export default function App() {
@@ -51,7 +51,7 @@ export default function App() {
           </div>
           {PAGES.map((page, index) => (
             <div key={index}>
-              <Link to={`/${page}`}>{page}</Link>
+              <Link to={`/${page.page}`}>{page.page}</Link>
             </div>
           ))}
         </div>
@@ -60,7 +60,13 @@ export default function App() {
       <Suspense fallback={null}>
         <Switch>
           {PAGES.map((page, index) => (
-            <Route key={index} strict exact path={`/${page}`} component={lazy(() => import(`./pages/${page}`))} />
+            <Route
+              key={index}
+              strict={page.strict === undefined ? true : page.strict}
+              exact={page.exact === undefined ? true : page.exact}
+              path={`/${page.page}`}
+              component={lazy(() => import(`./pages/${page.page}`))}
+            />
           ))}
           {/* Home and Redirect */}
           <Route strict exact path="/" component={Home} />
