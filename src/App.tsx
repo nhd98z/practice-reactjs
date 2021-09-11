@@ -31,6 +31,7 @@ const PAGES: { page: string; exact?: boolean; strict?: boolean }[] = [
   { page: 'TestClassComponentRerender' },
   { page: 'TestObjectFitImageUrl' },
   { page: 'TestLayoutAndProtectedPage', exact: false },
+  { page: 'TestForwardRef' },
 ]
 
 export default function App() {

@@ -33,7 +33,7 @@ function TestReachDialog() {
       <Dialog isOpen={showDialog} onDismiss={close} aria-label="dialog">
         <button className="close-button" onClick={close}>
           <div>Close</div>
-          <span aria-hidden>×</span>
+          <span>×</span>
         </button>
         <p>Hello there. I am a dialog</p>
       </Dialog>
