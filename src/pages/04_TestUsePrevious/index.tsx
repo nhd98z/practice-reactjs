@@ -20,7 +20,6 @@ export function usePrevious<T>(value: T) {
     // tuy nhiên việc gán giá trị mới cho ref.current không làm nó re-render (vì nó là ref), nên giá trị của usePrevious() là giá trị cũ,
     // còn giá trị ref.current thì mới :D.
     ref.current = value
-    console.log('ref.current', ref.current)
   }, [value]) // Only re-run if value changes
 
   // Return previous value (happens before update in useEffect above)
