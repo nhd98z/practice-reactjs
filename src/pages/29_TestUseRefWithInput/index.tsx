@@ -1,5 +1,18 @@
-import React, { memo } from 'react'
+import React, { memo, useRef } from 'react'
 
 export default memo(function TestUseRefWithInput() {
-  return <div>TestUseRefWithInput</div>
+  const ref = useRef<HTMLInputElement>(null)
+
+  return (
+    <div>
+      <input ref={ref} />
+      <button
+        onClick={() => {
+          console.log(`ref.current`, '<' + (ref.current && ref.current.value) + '>')
+        }}
+      >
+        console.log ref.current.value
+      </button>
+    </div>
+  )
 })
