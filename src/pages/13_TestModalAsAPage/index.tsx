@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { css } from '@emotion/css'
-import TestModalAsAPage_PageThatCanOpenAsAModal from '../TestModalAsAPage_PageThatCanOpenAsAModal'
+import TestModalAsAPage_PageThatCanOpenAsAModal from '../14_TestModalAsAPage_PageThatCanOpenAsAModal'
 import { useLocation } from 'react-use'
 
 function Modal({ show, closeModal }: { show: boolean; closeModal: () => void }) {
@@ -42,7 +42,7 @@ export default function TestModalAsAPage() {
 
   const openModal = () => {
     setShow(true)
-    window.history.pushState('', 'ReactApp', '/TestModalAsAPage_PageThatCanOpenAsAModal')
+    window.history.pushState('', 'ReactApp', '/14_TestModalAsAPage_PageThatCanOpenAsAModal')
   }
 
   const closeModal = () => {
@@ -51,7 +51,7 @@ export default function TestModalAsAPage() {
   }
 
   useEffect(() => {
-    if (location.pathname === '/TestModalAsAPage') {
+    if (location.pathname === '/13_TestModalAsAPage') {
       setShow(false)
     }
   }, [location])

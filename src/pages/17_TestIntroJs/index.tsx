@@ -18,6 +18,7 @@ export default function TestIntroJs() {
       introJs()
         .setOptions({
           exitOnOverlayClick: false,
+          keyboardNavigation: false,
         })
         .start()
         .goToStep(step)

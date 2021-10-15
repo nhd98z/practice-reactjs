@@ -1,6 +1,6 @@
 import { CountUp } from 'use-count-up'
 import { useEffect, useState } from 'react'
-import { usePrevious } from '../TestUsePrevious'
+import { usePrevious } from '../04_TestUsePrevious'
 
 export default function TestUseCountUp() {
   const [count, setCount] = useState(1000)

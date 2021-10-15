@@ -73,7 +73,7 @@ function PublicLayoutRedRoute({ component: Component, ...rest }: RouteProps) {
 }
 
 function ProtectedLayoutYellowRoute({ component: Component, ...rest }: RouteProps) {
-  if (!loggedIn) return <Redirect to={{ pathname: '/TestLayoutAndProtectedPage' }} />
+  if (!loggedIn) return <Redirect to={{ pathname: '/27_TestLayoutAndProtectedPage' }} />
   return (
     <Route
       {...rest}
@@ -91,7 +91,7 @@ function ProtectedLayoutYellowRoute({ component: Component, ...rest }: RouteProp
 }
 
 function ProtectedLayoutRedRoute({ component: Component, ...rest }: RouteProps) {
-  if (!loggedIn) return <Redirect to={{ pathname: '/TestLayoutAndProtectedPage' }} />
+  if (!loggedIn) return <Redirect to={{ pathname: '/27_TestLayoutAndProtectedPage' }} />
   return (
     <Route
       {...rest}
@@ -126,7 +126,7 @@ const Page4 = memo(function Page4() {
 
 export default memo(function TestLayoutAndProtectedPage() {
   const history = useHistory()
-  const baseUrl = '/TestLayoutAndProtectedPage'
+  const baseUrl = '/27_TestLayoutAndProtectedPage'
   const page1Url = baseUrl + '/page1'
   const page2Url = baseUrl + '/page2'
   const page3Url = baseUrl + '/page3'

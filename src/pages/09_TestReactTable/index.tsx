@@ -6,10 +6,10 @@
  * cần customize table nặng, còn những table thường thường thì chả cần.
  */
 
-import styled from 'styled-components';
-import { useTable, useGroupBy, useExpanded } from 'react-table';
-import makeData from './makeData';
-import { useMemo } from 'react';
+import styled from 'styled-components'
+import { useTable, useGroupBy, useExpanded } from 'react-table'
+import makeData from './makeData'
+import { useMemo } from 'react'
 
 const Styles = styled.div`
   padding: 1rem;
@@ -38,7 +38,7 @@ const Styles = styled.div`
       }
     }
   }
-`;
+`
 
 function Table({ columns, data }) {
   const {
@@ -55,11 +55,11 @@ function Table({ columns, data }) {
     },
     useGroupBy,
     useExpanded // useGroupBy would be pretty useless without useExpanded ;)
-  );
+  )
 
   // We don't want to render all of the rows for this example, so cap
   // it at 100 for this use case
-  const firstPageRows = rows.slice(0, 100);
+  const firstPageRows = rows.slice(0, 100)
 
   return (
     <>
@@ -85,7 +85,7 @@ function Table({ columns, data }) {
         </thead>
         <tbody {...getTableBodyProps()}>
           {firstPageRows.map((row, i) => {
-            prepareRow(row);
+            prepareRow(row)
             return (
               <tr {...row.getRowProps()}>
                 {row.cells.map((cell) => {
@@ -120,17 +120,17 @@ function Table({ columns, data }) {
                         cell.render('Cell')
                       )}
                     </td>
-                  );
+                  )
                 })}
               </tr>
-            );
+            )
           })}
         </tbody>
       </table>
       <br />
       <div>Showing the first 100 results of {rows.length} rows</div>
     </>
-  );
+  )
 }
 
 function Legend() {
@@ -168,22 +168,22 @@ function Legend() {
         Repeated Value
       </span>
     </div>
-  );
+  )
 }
 
 // This is a custom aggregator that
 // takes in an array of leaf values and
 // returns the rounded median
 function roundedMedian(leafValues) {
-  let min = leafValues[0] || 0;
-  let max = leafValues[0] || 0;
+  let min = leafValues[0] || 0
+  let max = leafValues[0] || 0
 
   leafValues.forEach((value) => {
-    min = Math.min(min, value);
-    max = Math.max(max, value);
-  });
+    min = Math.min(min, value)
+    max = Math.max(max, value)
+  })
 
-  return Math.round((min + max) / 2);
+  return Math.round((min + max) / 2)
 }
 
 export default function TestReactTable() {
@@ -246,13 +246,13 @@ export default function TestReactTable() {
       },
     ],
     []
-  );
+  )
 
-  const data = useMemo(() => makeData(10000), []);
+  const data = useMemo(() => makeData(10000), [])
 
   return (
     <Styles>
       <Table columns={columns} data={data} />
     </Styles>
-  );
+  )
 }
