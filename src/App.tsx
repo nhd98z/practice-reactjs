@@ -33,6 +33,8 @@ const PAGES: { page: string; exact?: boolean; strict?: boolean }[] = [
   { page: '27_TestLayoutAndProtectedPage', exact: false },
   { page: '28_TestForwardRef' },
   { page: '29_TestUseRefWithInput' },
+  { page: '30_AxiosErrorHandling' },
+  { page: '31_CancelAxiosRequest' },
 ]
 
 export default function App() {
