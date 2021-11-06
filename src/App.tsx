@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react'
 import { BrowserRouter as Router, Link, Redirect, Route, Switch } from 'react-router-dom'
-import Home from './pages/Home'
+import Home from './pages/00_Home'
 import { css } from '@emotion/css'
 
 const PAGES: { page: string; exact?: boolean; strict?: boolean }[] = [
@@ -51,7 +51,7 @@ export default function App() {
           `}
         >
           <div>
-            <Link to="/">Home</Link>
+            <Link to="/">00_Home</Link>
           </div>
           {PAGES.map((page, index) => (
             <div key={index}>
@@ -63,6 +63,8 @@ export default function App() {
 
       <Suspense fallback={null}>
         <Switch>
+          {/* 00_Home and Redirect */}
+          <Route strict exact path="/00_Home" component={Home} />
           {PAGES.map((page, index) => (
             <Route
               key={index}
@@ -72,8 +74,6 @@ export default function App() {
               component={lazy(() => import(`./pages/${page.page}`))}
             />
           ))}
-          {/* Home and Redirect */}
-          <Route strict exact path="/" component={Home} />
           <Route component={() => <Redirect to={{ pathname: '/' }} />} />
         </Switch>
       </Suspense>
