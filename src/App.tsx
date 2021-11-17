@@ -35,6 +35,7 @@ const PAGES: { page: string; exact?: boolean; strict?: boolean }[] = [
   { page: '29_TestUseRefWithInput' },
   { page: '30_AxiosErrorHandling' },
   { page: '31_CancelAxiosRequest' },
+  { page: '32_UnderstandHOC' },
 ]
 
 export default function App() {
