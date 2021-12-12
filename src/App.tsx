@@ -37,6 +37,7 @@ const PAGES: { page: string; exact?: boolean; strict?: boolean }[] = [
   { page: '31_CancelAxiosRequest' },
   { page: '32_UnderstandHOC' },
   { page: '33_PracticeMobX' },
+  { page: '34_DangerouslySetInnerHTML' },
 ]
 
 export default function App() {
